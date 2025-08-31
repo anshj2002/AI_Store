@@ -1,0 +1,10 @@
+# Social Post ({{ tone }})
+**Topic:** {{ topic }}
+**Audience:** {{ audience }}
+
+{{- "\n" -}}
+{{ "Short" if length == "short" else ("Medium" if length == "medium" else "Long") }} caption:
+- {{ topic }} matters to {{ audience }}. Here's why: {{ constraints or "fast, practical benefit" }}.
+- CTA: Comment or DM to learn more.
+
+#Hashtags: #{{ topic|replace(" ", "") }} #Updates #{{ tone|title }}

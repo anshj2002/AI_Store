@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Customer AI - Content Generator</title>
+  <link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+  <div class="container">
+    <h2>📝 Mini Customer AI — Content Generator</h2>
+
+    <form id="genForm">
+      <label>Type:
+        <select id="type">
+          <option value="post">Social Post</option>
+          <option value="speech">Speech</option>
+          <option value="slogan">Slogan</option>
+        </select>
+      </label><br>
+      <label>Topic: <input type="text" id="topic" required></label><br>
+      <label>Audience: <input type="text" id="audience" value="general"></label><br>
+      <label>Tone: <input type="text" id="tone" value="friendly"></label><br>
+      <label>Length:
+        <select id="length">
+          <option>short</option>
+          <option>medium</option>
+          <option>long</option>
+        </select>
+      </label><br>
+      <label>Constraints: <input type="text" id="constraints"></label><br>
+      <button type="submit">Generate</button>
+    </form>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    document.getElementById("genForm").addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      const type = document.getElementById("type").value;
+      const payload = {
+        topic: document.getElementById("topic").value,
+        audience: document.getElementById("audience").value,
+        tone: document.getElementById("tone").value,
+        length: document.getElementById("length").value,
+        constraints: document.getElementById("constraints").value
+      };
+      const res = await fetch(`http://127.0.0.1:8000/generate/${type}`, {
+        method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload)
+      });
+      const data = await res.json();
+      document.getElementById("output").innerHTML = `<h3>Result</h3><pre>${data.text}</pre>`;
+    });
+  </script>
+</body>
+</html>

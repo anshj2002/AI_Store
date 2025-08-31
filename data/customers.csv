@@ -1,0 +1,6 @@
+id,name,email,joined_at,city,age,last_purchase_at,total_orders,total_spend
+C001,Anita Sharma,anita@example.com,2024-03-10,Delhi,29,2025-08-10,8,18500
+C002,Rahul Jain,rahul@example.com,2023-12-01,Mumbai,33,2025-05-02,2,3200
+C003,Kavya Iyer,kavya@example.com,2022-10-18,Bengaluru,27,2024-07-20,25,76000
+C004,Vikram Rao,vikram@example.com,2021-02-05,Pune,41,2023-11-15,1,900
+C005,Priya Nair,priya@example.com,2025-07-05,Chennai,24,2025-08-28,3,6200
