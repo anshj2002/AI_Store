@@ -1,29 +1,3 @@
-
-
-## 📂 Project Structure
-
-```
-AI Suite/
-├── api/                    # FastAPI backend
-│   ├── main.py            # Main app
-│   ├── config.py          # Settings
-│   ├── models.py          # Database models
-│   ├── routers/           # API endpoints
-│   └── prompts/           # Content templates
-├── db/
-│   ├── database.py        # SQLite config
-│   └── init.sql           # Schema (optional)
-├── web/                   # Web interface
-│   ├── chat.html          # Chat demo
-│   ├── content.html       # Content generator
-│   └── assets/common.css  # Styling
-├── data/
-│   └── customers.csv      # Sample customer data
-├── customer_ai.db         # SQLite database (auto-created)
-├── setup_sqlite.py        # Database setup script
-└── requirements.txt       # Python dependencies
-```
-
 # 🤖 AI Suite - Complete Customer AI System
 
 > **Production-ready AI customer service platform with intelligent chatbots, content generation, analytics, and reputation monitoring**
@@ -810,4 +784,3 @@ uvicorn api.main:app --reload --log-level debug
 ```python
 # In api/routers/new_feature.py
 from fastapi import APIRouter
- 
